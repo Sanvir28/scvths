@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Computer Science at SCVTHS</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .nav {
+            background-color: #002147;
+            padding: 10px;
+        }
+        .nav-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .nav a {
+            color: #cccccc;
+            text-decoration: none;
+            padding: 10px;
+        }
+        .nav a:hover {
+            color: white;
+        }
+        .logo {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1, h2, h3 {
+            color: #002147;
+        }
+        footer {
+            background-color: #002147;
+            color: white;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-content">
+            <span class="logo">Computer Science</span>
+            <div>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="pltw.html">PLTW</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1 style="text-align: center">Contact Us</h1>
+
+        <div style="display: flex; gap: 40px; margin-bottom: 40px">
+            <div style="flex: 1">
+                <h2>Instructor Information</h2>
+                <div style="font-size: 16px; line-height: 1.6">
+                    <p><strong>Instructor:</strong> Mrs. Sharon Phillips</p>
+                    <p><strong>Room:</strong> B-207</p>
+                    <p><strong>Prerequisites:</strong> None</p>
+                    <p><strong>Email:</strong> sphillips@scvts.net</p>
+                    <p><strong>Voice Mail:</strong> 908-526-8900 X-7346</p>
+                </div>
+                <p style="margin-top: 20px; color: #666">
+                    Feel free to fill out the form below for Mrs. Phillips with any
+                    inquiries about the program or suggestions for the student made
+                    website.
+                </p>
+            </div>
+
+            <div style="flex: 1">
+                <img src="images/instructor.jpg" alt="Mrs. Sharon Phillips" 
+                     style="width: 100%; max-width: 400px; height: auto; border-radius: 4px; display: block; margin: 0 auto">
+                <p style="text-align: center; margin-top: 10px; color: #666">
+                    Mrs. Sharon Phillips, Room B-207
+                </p>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px">
+            <h2 style="text-align: center">Send Us a Message</h2>
+            <p style="text-align: center; margin-bottom: 20px; color: #666">
+                Have a question? Use the form below to reach out to us directly.
+            </p>
+            <form style="max-width: 600px; margin: 0 auto">
+                <div style="margin-bottom: 15px">
+                    <label style="display: block; margin-bottom: 5px">Full Name *</label>
+                    <input type="text" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px">
+                </div>
+                <div style="margin-bottom: 15px">
+                    <label style="display: block; margin-bottom: 5px">Email *</label>
+                    <input type="email" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px">
+                </div>
+                <div style="margin-bottom: 15px">
+                    <label style="display: block; margin-bottom: 5px">Message *</label>
+                    <textarea required rows="5" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px"></textarea>
+                </div>
+                <button type="submit" style="background-color: #002147; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; width: 100%">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div style="max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center">
+            <div>
+                <h3 style="margin: 0">Computer Science at SCVTHS</h3>
+                <p style="margin: 5px 0; color: #ccc">Preparing students for success in technology</p>
+            </div>
+            <div style="color: #ccc">
+                © 2025 SCVTHS. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
