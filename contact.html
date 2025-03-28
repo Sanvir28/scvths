@@ -83,7 +83,7 @@
             </div>
 
             <div style="flex: 1">
-                <img src="images/instructor.jpg" alt="Mrs. Sharon Phillips" 
+                <img src="images/instructor.jpeg" alt="Mrs. Sharon Phillips" 
                      style="width: 100%; max-width: 400px; height: auto; border-radius: 4px; display: block; margin: 0 auto">
                 <p style="text-align: center; margin-top: 10px; color: #666">
                     Mrs. Sharon Phillips, Room B-207
@@ -91,29 +91,78 @@
             </div>
         </div>
 
-        <div style="margin-top: 40px">
-            <h2 style="text-align: center">Send Us a Message</h2>
-            <p style="text-align: center; margin-bottom: 20px; color: #666">
-                Have a question? Use the form below to reach out to us directly.
-            </p>
-            <form style="max-width: 600px; margin: 0 auto">
-                <div style="margin-bottom: 15px">
-                    <label style="display: block; margin-bottom: 5px">Full Name *</label>
-                    <input type="text" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px">
-                </div>
-                <div style="margin-bottom: 15px">
-                    <label style="display: block; margin-bottom: 5px">Email *</label>
-                    <input type="email" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px">
-                </div>
-                <div style="margin-bottom: 15px">
-                    <label style="display: block; margin-bottom: 5px">Message *</label>
-                    <textarea required rows="5" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px"></textarea>
-                </div>
-                <button type="submit" style="background-color: #002147; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; width: 100%">
-                    Send Message
-                </button>
-            </form>
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSeZFPMHZt_glsBtDkztHgoLhWA0ptp9HZCaH0R4OV2yTlFR3w/formResponse"
+      target="_self"
+      id="bootstrapForm"
+      method="POST">
+    <fieldset>
+        <h2>SCVTHS Phillips&#x27; Site Questions Form<br><small>Fill out this form to reach out directly to us!</small></h2>
+    </fieldset>
+
+
+    <!-- Field type: "short" id: "193574675" -->
+    <fieldset>
+        <legend for="193574675">Name</legend>
+        <div class="form-group">
+            <input id="366340186" type="text" name="entry.366340186" class="form-control" >
         </div>
+    </fieldset>
+
+
+    <!-- Field type: "short" id: "48917791" -->
+    <fieldset>
+        <legend for="48917791">Email</legend>
+        <div class="form-group">
+            <input id="1875068779" type="text" name="entry.1875068779" class="form-control" required>
+        </div>
+    </fieldset>
+
+
+    <!-- Field type: "paragraph" id: "834374377" -->
+    <fieldset>
+        <legend for="834374377">Question/Comment</legend>
+        <div class="form-group">
+            <textarea id="2011600005" name="entry.2011600005" class="form-control" required></textarea>
+        </div>
+    </fieldset>
+
+    <input type="hidden" name="fvv" value="1">
+    <input type="hidden" name="fbzx" value="-5970949568565584810">
+    <!--
+        CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
+        This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
+        Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
+        We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
+    -->
+    <input type="hidden" name="pageHistory" value="0">
+
+    <input class="btn btn-primary" type="submit" value="Submit">
+</form>
+
+<script>
+
+// This script requires jQuery and jquery-form plugin
+// You can use these ones from Cloudflare CDN:
+// <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+// <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha256-2Pjr1OlpZMY6qesJM68t2v39t+lMLvxwpa8QlRjJroA=" crossorigin="anonymous"></script>
+//
+$('#bootstrapForm').submit(function (event) {
+    event.preventDefault()
+    var extraData = {}
+    $('#bootstrapForm').ajaxSubmit({
+        data: extraData,
+        dataType: 'jsonp',  // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
+        error: function () {
+            // Submit of form should be successful but JSONP callback will fail because Google Forms
+            // does not support it, so this is handled as a failure.
+            alert('Form Submitted. Thanks.')
+            // You can also redirect the user to a custom thank-you page:
+            // window.location = 'http://www.mydomain.com/thankyoupage.html'
+        }
+    })
+})
+
+</script>
     </div>
 
     <footer>
